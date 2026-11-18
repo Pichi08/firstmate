@@ -1,0 +1,28 @@
+lab core session fm-hclab-docx-67866-10163 ready (server pid 67939)
+== doctor --backend hc, herdr-core present only as the 'hc' alias, live lab core
+required git=<scratch>/shim/git
+required jq=<scratch>/shim/jq
+required herdr-core=<scratch>/shim/hc
+required node=<scratch>/shim/node
+required tasks-axi=<scratch>/shim/tasks-axi
+required treehouse=<scratch>/shim/treehouse
+required harness=MISSING
+check hc=ok: <scratch>/shim/hc (hc 0.1.21)
+check hc-server=human: remote hc second mates need a Linux host, because herdr-core on macOS does not report a core that survives logout (session fm-hclab-docx-67866-10163 reports no boolean keeps_running_after_logout)
+action: hc-server: run this remote second mate on a Linux host, or on the herdr or rex backend on this macOS host
+error: required tools do not resolve on the remote runtime PATH: harness
+error: this host is not ready for a remote second mate; unresolved: remote-job-worker remote-job-worker-loaded remote-job-probe hc-server entrypoint-link
+== same host with node removed from PATH
+required git=<scratch>/shim/git
+required jq=<scratch>/shim/jq
+required herdr-core=<scratch>/shim/hc
+required node=MISSING
+required tasks-axi=MISSING (incompatible)
+required treehouse=<scratch>/shim/treehouse
+required harness=MISSING
+check hc=ok: <scratch>/shim/hc (hc 0.1.21)
+check hc-server=human: no herdr-core core answers for session fm-hclab-docx-67866-10163 at /tmp/fm-hc-lab-502/fm-hclab-docx-67866-10163.sock
+action: hc-server: connect this machine from Herdr.app or start its user service, then rerun this command; Firstmate never starts a core, because one started from this session is not the core the app shows
+error: required tools do not resolve on the remote runtime PATH: node tasks-axi harness
+error: this host is not ready for a remote second mate; unresolved: remote-job-worker remote-job-worker-loaded remote-job-probe hc-server entrypoint-link
+teardown exit=0

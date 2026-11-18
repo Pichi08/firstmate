@@ -1,0 +1,19 @@
+target d64a118d
+lab core session fm-hclab-rsmate-51930-17227 ready (server pid 52027)
+ok - remote hc smoke: the control plane launches the mate in the remote hc session with an alive agent
+ok - remote hc smoke: a steer is recorded and its doorbell reaches the mate
+ok - remote hc smoke: a finished terminal is removed as a husk and the mate relaunched
+ok - remote hc smoke: retirement closes the mate's terminal and removes its home
+FM_TEST_COMPLETE
+smoke rc=0
+
+ok - A a launch with no live core for the remote hc session is refused and calls no hc
+ok - A launch runs the host-local hc secondmate spawn in the remote hc session and records its route
+ok - B state, route, repeated launch, steer, and key reach the hc endpoint without a second terminal
+ok - C records outside the remote hc session or on another backend are refused
+ok - D a finished hc mate is replaced after its husk is removed
+ok - E a dead core socket reads unreadable without calling hc
+ok - F the session override and the runtime-directory pin behave as documented
+ok - G host-local retirement closes the hc mate's terminal and removes its home
+ALL TESTS PASSED
+control rc=0

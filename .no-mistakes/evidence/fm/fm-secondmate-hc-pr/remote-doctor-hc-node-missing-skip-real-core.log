@@ -1,0 +1,72 @@
+target commit: d64a118d
+lab core session fm-hclab-docnode-33169-24172 ready (server pid 33237)
+lab session=fm-hclab-docnode-33169-24172 socket=/tmp/fm-hc-lab-502/fm-hclab-docnode-33169-24172.sock
+
+== 1. node on PATH, live lab core (control)
+required git=<scratch>/with/git
+required jq=/usr/bin/jq
+required herdr-core=<scratch>/with/hc
+required node=<scratch>/with/node
+required tasks-axi=<scratch>/with/tasks-axi
+required treehouse=<scratch>/with/treehouse
+required harness=MISSING
+check hc=ok: <scratch>/with/hc (hc 0.1.21)
+check hc-server=human: remote hc second mates need a Linux host, because herdr-core on macOS does not report a core that survives logout (session fm-hclab-docnode-33169-24172 reports no boolean keeps_running_after_logout)
+action: hc-server: run this remote second mate on a Linux host, or on the herdr or rex backend on this macOS host
+error: required tools do not resolve on the remote runtime PATH: harness
+error: this host is not ready for a remote second mate; unresolved: remote-job-worker remote-job-worker-loaded remote-job-probe hc-server
+doctor exit=
+
+== 2. node removed from PATH, same live lab core
+required git=<scratch>/without/git
+required jq=/usr/bin/jq
+required herdr-core=<scratch>/without/hc
+required node=MISSING
+required tasks-axi=MISSING (incompatible)
+required treehouse=<scratch>/without/treehouse
+required harness=MISSING
+check hc=ok: <scratch>/without/hc (hc 0.1.21)
+check hc-server=skip: cannot prove a herdr-core core answers for session fm-hclab-docnode-33169-24172 at /tmp/fm-hc-lab-502/fm-hclab-docnode-33169-24172.sock because node does not resolve; install node where it resolves on this PATH, then rerun this command
+error: required tools do not resolve on the remote runtime PATH: node tasks-axi harness
+error: this host is not ready for a remote second mate; unresolved: remote-job-worker remote-job-worker-loaded remote-job-probe
+doctor exit=
+
+lab core still running: 
+
+== stopping lab core
+{"stopped":true}
+stop exit=0
+  ls: /tmp/fm-hc-lab-502/fm-hclab-docnode-33169-24172.sock: No such file or directory
+
+== 3. node on PATH, core stopped (must report no core)
+required git=<scratch>/with/git
+required jq=/usr/bin/jq
+required herdr-core=<scratch>/with/hc
+required node=<scratch>/with/node
+required tasks-axi=<scratch>/with/tasks-axi
+required treehouse=<scratch>/with/treehouse
+required harness=MISSING
+check hc=ok: <scratch>/with/hc (hc 0.1.21)
+check hc-server=human: no herdr-core core answers for session fm-hclab-docnode-33169-24172 at /tmp/fm-hc-lab-502/fm-hclab-docnode-33169-24172.sock
+action: hc-server: connect this machine from Herdr.app or start its user service, then rerun this command; Firstmate never starts a core, because one started from this session is not the core the app shows
+error: required tools do not resolve on the remote runtime PATH: harness
+error: this host is not ready for a remote second mate; unresolved: remote-job-worker remote-job-worker-loaded remote-job-probe hc-server
+doctor exit=
+
+== 4. node removed, core stopped (must not claim ok)
+required git=<scratch>/without/git
+required jq=/usr/bin/jq
+required herdr-core=<scratch>/without/hc
+required node=MISSING
+required tasks-axi=MISSING (incompatible)
+required treehouse=<scratch>/without/treehouse
+required harness=MISSING
+check hc=ok: <scratch>/without/hc (hc 0.1.21)
+check hc-server=skip: cannot prove a herdr-core core answers for session fm-hclab-docnode-33169-24172 at /tmp/fm-hc-lab-502/fm-hclab-docnode-33169-24172.sock because node does not resolve; install node where it resolves on this PATH, then rerun this command
+error: required tools do not resolve on the remote runtime PATH: node tasks-axi harness
+error: this host is not ready for a remote second mate; unresolved: remote-job-worker remote-job-worker-loaded remote-job-probe
+doctor exit=
+
+== teardown
+teardown exit=0
+node missing, no core: doctor exit=1 (non-zero = host not reported ready)

@@ -1,0 +1,19 @@
+real hc: ~/.local/bin/herdr-core (hc 0.1.21)
+== case 1: no socket at all for session fm-hclab-nocore-38586
+error: no herdr-core core answers for session fm-hclab-nocore-38586 at /tmp/fmnc.iU02/run/herdr-core/fm-hclab-nocore-38586.sock; connect this machine from Herdr.app or start its user service, then retry; Firstmate never starts a core, because one started from this session is not the core the app shows
+exit=1
+hc invocations: 0
+endpoint record present: no
+== case 2: stale socket file left by a stopped core
+total 0
+srwxr-xr-x@ 1 daniel  wheel  0 Nov 18 11:13 fm-hclab-nocore-38586.sock
+error: no herdr-core core answers for session fm-hclab-nocore-38586 at /tmp/fmnc.iU02/run/herdr-core/fm-hclab-nocore-38586.sock; connect this machine from Herdr.app or start its user service, then retry; Firstmate never starts a core, because one started from this session is not the core the app shows
+exit=1
+hc invocations: 0
+endpoint record present: no
+core server processes for fm-hclab-nocore-38586: 0
+files under scratch runtime/state after both attempts:
+<scratch>/run
+<scratch>/xdg-state
+<scratch>/run/herdr-core
+<scratch>/run/herdr-core/fm-hclab-nocore-38586.sock

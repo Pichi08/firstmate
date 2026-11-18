@@ -1,0 +1,14 @@
+tests/fm-remote-doctor.test.sh: line 56: /private/var/folders/77/sbydwf595_j6w33tcywnqm6w0000gp/T/fm-remote-doctor.GSQNfE/holder-5.fifo: Interrupted system call
+tests/fm-remote-doctor.test.sh: line 60: 57813 Killed: 9               env -i "$@" "$HOLDER_JQ" . "$fifo"
+tests/fm-remote-doctor.test.sh: line 56: /private/var/folders/77/sbydwf595_j6w33tcywnqm6w0000gp/T/fm-remote-doctor.GSQNfE/holder-6.fifo: Interrupted system call
+tests/fm-remote-doctor.test.sh: line 62: 57815 Killed: 9               env -i "$@" "$HOLDER_JQ" . "$fifo"
+tests/fm-remote-doctor.test.sh: line 56: /private/var/folders/77/sbydwf595_j6w33tcywnqm6w0000gp/T/fm-remote-doctor.GSQNfE/holder-7.fifo: Interrupted system call
+tests/fm-remote-doctor.test.sh: line 64: 57817 Killed: 9               env -i "$@" "$HOLDER_JQ" . "$fifo"
+tests/fm-remote-doctor.test.sh: line 56: /private/var/folders/77/sbydwf595_j6w33tcywnqm6w0000gp/T/fm-remote-doctor.GSQNfE/holder-8.fifo: Interrupted system call
+tests/fm-remote-doctor.test.sh: line 66: 57819 Killed: 9               env -i "$@" "$HOLDER_JQ" . "$fifo"
+tests/fm-remote-doctor.test.sh: line 56: /private/var/folders/77/sbydwf595_j6w33tcywnqm6w0000gp/T/fm-remote-doctor.GSQNfE/holder-9.fifo: Interrupted system call
+tests/fm-remote-doctor.test.sh: line 68: 57821 Killed: 9               env -i "$@" "$HOLDER_JQ" . "$fifo"
+ok - a missing session backend is a human gap that --fix never claims to close
+ok - an absent launch agent is a fixable gap and the read-only run changes nothing
+not ok - --fix left a repairable host unready: expected exit 0, got 1
+rc=1

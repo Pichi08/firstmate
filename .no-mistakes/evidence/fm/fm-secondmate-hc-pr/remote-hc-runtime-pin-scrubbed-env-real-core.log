@@ -1,0 +1,24 @@
+lab session: fm-hclab-rpin-51034-16027
+lab core session fm-hclab-rpin-51034-16027 ready (server pid 51102)
+lab core socket: /tmp/fm-hc-lab-502/fm-hclab-rpin-51034-16027.sock
+== launch under scrubbed env (env -i: XDG_RUNTIME_DIR and FM_HC_SOCKET unset)
+schema=fm-remote-secondmate-control.v1
+backend=hc
+target=fm-hclab-rpin-51034-16027:t1
+hc_session=fm-hclab-rpin-51034-16027
+harness=opencode
+model=default
+effort=default
+exit=0
+recorded terminal: t1
+== the lab core, read through its own pinned socket, holds that terminal:
+{"id":null,"labels":{"firstmate.home":"firstmate-ce97efb3","firstmate.task":"fm-rpin50905","herdr.space":"fm-2ndmate-rpin50905-a81716de","herdr.tab":"firstmate-ce97efb3-fm-rpin50905"}}
+state: alive
+== no stray core under the unpinned ~/.local/state fallback:
+<scratch>/xdg-state
+== retire
+teardown rpin50905 complete (window fm-hclab-rpin-51034-16027:t1, worktree /private<scratch>/mate)
+exit=0
+hc get after retire exit=3 (3 = gone)
+== teardown
+teardown exit=0

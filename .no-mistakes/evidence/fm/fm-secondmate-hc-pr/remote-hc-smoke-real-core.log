@@ -1,0 +1,13 @@
+lab core session fm-hclab-rsmate-12654-19710 ready (server pid 12741)
+ok - remote hc smoke: the control plane launches the mate in the remote hc session with an alive agent
+ok - remote hc smoke: a steer is recorded and its doorbell reaches the mate
+ok - remote hc smoke: a finished terminal is removed as a husk and the mate relaunched
+ok - remote hc smoke: retirement closes the mate's terminal and removes its home
+FM_TEST_COMPLETE
+fm-hc-lab: FLEET-STATE TRIPWIRE FAILED: real herdr-core state changed during lab work
+fm-hc-lab: before: 10 files; after: 10 files
+11c11
+< ~/.local/state/herdr-core/default/terminals.json 184540057 1795018313 9671
+---
+> ~/.local/state/herdr-core/default/terminals.json 184540744 1795018343 9683
+rc=1
